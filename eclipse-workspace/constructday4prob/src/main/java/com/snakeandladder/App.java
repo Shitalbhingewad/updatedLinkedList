@@ -18,8 +18,7 @@ public static void main(String[] args) {
 		Player playObj=new Player();
     	logger.info("Player's initial position :"+playObj.getPlayerPosition());
 
-    	playObj.diceRoll();
+    	playObj.SnakeLadderBoard();
 }
-
 	}
 
