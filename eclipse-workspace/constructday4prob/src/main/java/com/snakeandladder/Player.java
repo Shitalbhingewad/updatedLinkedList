@@ -8,6 +8,7 @@ public class Player {
 	private static final Logger logger = LogManager.getLogger(App.class);
 	private int playerPosition;
 	int dice = 0;
+	int count = 0;
 
 	Player() {
 		playerPosition = 0;
@@ -28,6 +29,7 @@ public class Player {
 	}
 
 	public int SnakeLadderBoard(int dieValue) {
+		logger.info("Die Value" + dieValue);
 		int options = random.nextInt(3) + 1;
 		switch (options) {
 		case 1:
@@ -52,6 +54,7 @@ public class Player {
 	public void play() {
 		while (playerPosition < 100) {
 			int dieValue = diceRoll();
+			count++;
 			logger.info("Dice value :" + dieValue);
 			int dia = SnakeLadderBoard(dieValue);
 			playerPosition = playerPosition + dia;
@@ -60,7 +63,9 @@ public class Player {
 			} else if (playerPosition > 100) {
 				playerPosition = playerPosition - dia;
 			}
+			logger.info("position after every die role :" + playerPosition);
 		}
 		logger.info("Winning position :" + playerPosition);
+		logger.info("Number of times dice was played to win game :" + count);
 	}
 }
