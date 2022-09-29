@@ -27,17 +27,17 @@ public class Player {
 		return random.nextInt(6) + 1;
 	}
 
-	public void SnakeLadderBoard() {
-		int dieValue = diceRoll();
+	public int SnakeLadderBoard(int dievalue) {
+	
 		int options = random.nextInt(3) + 1;
 		switch (options) {
 		case 1:
 			logger.info("Ladder");
-			dice = dice + dieValue;
+			dice = dice + dievalue;
 			break;
 		case 2:
 			logger.info("Snake");
-			dice = dice - dieValue;
+			dice = dice - dievalue;
 			break;
 		case 3:
 			logger.info("No Play");
@@ -46,6 +46,21 @@ public class Player {
 		}
 
 		logger.info("After chacking Condition how many position player have to move :" + dice);
+		return dice;
 
 	}
-}
+
+	public void play() {
+		while (playerPosition < 100) {
+			int dieValue = diceRoll();
+			logger.info("Dice value :" + dieValue);
+			int dia = SnakeLadderBoard(dieValue);
+			playerPosition = playerPosition + dia;
+			if (playerPosition < 0) {
+				playerPosition = 0;
+			}
+		}
+		logger.info("Winning position :" + playerPosition);
+	}
+
+	}
