@@ -9,9 +9,14 @@ public class App {
        // list.insertNode(56);
         //list.insertNode(30);
        // list.insertNode(70);
-        list.insertAtStart(70);
-        list.insertAtStart(30);
-        list.insertAtStart(56);
+       // list.insertAtStart(70);
+       // list.insertAtStart(30);
+       // list.insertAtStart(56);
+        list.append(56);
+         list.append(30);
+         list.append(70);
+         
+         list.append(71);
         list.showLinkedList();
       
     }
