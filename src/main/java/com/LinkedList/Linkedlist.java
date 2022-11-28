@@ -77,29 +77,29 @@ public class Linkedlist {
 		System.out.println(temp.data);
 
 	}
-	void deleteNode(int index) {
-        Node node;
-        Node temp;
-        temp = head;
-        if (head == null) {
+	 void deleteNode(int index) {
+	        Node node;
+	        Node temp;
+	        temp = head;
+	        if (head == null) {
+	            System.out.println("NO list exists!!");
+	        } else {
 
-        } else {
+	            for (int i = 0; i < index - 1; i++) {
+	                temp = temp.next;
+	            }
+	            if (index == 0) {
 
-            for (int i = 0; i < index - 1; i++) {
-                temp = temp.next;
-            }
-            if (index == 0) {
+	                head = head.next;
+	                temp = null;
 
-                head = head.next;
-                temp = null;
+	            } else {
+	                node = temp.next;
+	                temp.next = node.next;
+	                node = null;
+	            }
 
-            } else {
-                node = temp.next;
-                temp.next = node.next;
-                node = null;
-            }
+	        }
+	 }
 
-        }
-
-	}
 }
