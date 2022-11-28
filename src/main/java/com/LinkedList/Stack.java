@@ -37,4 +37,22 @@ public class Stack {
             System.out.println(temp.data);
         }
     }
+ public int peek() {
+        if (isEmpty()) {
+            System.out.println("The stack is empty");
+            System.exit(-1);
+        }
+        return top.data;
+    }
+
+    // function to pop a top element from the stack
+    public int pop() {
+        if (isEmpty()) {
+            System.out.println("Stack Underflow");
+            System.exit(-1);
+        }
+        int top = peek();
+        this.top = (this.top).next;
+        return top;
+    }
 }

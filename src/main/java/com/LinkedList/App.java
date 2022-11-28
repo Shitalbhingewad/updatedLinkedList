@@ -12,7 +12,10 @@ public class App {
 		s.push(30);
 		s.push(56);
 		s.showStack();
-		
+		 while (!s.isEmpty()) {
+            s.peek();
+            s.pop();
+        }
 		 
 	}
 }
