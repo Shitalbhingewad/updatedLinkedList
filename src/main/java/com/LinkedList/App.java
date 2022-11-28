@@ -16,12 +16,16 @@ public class App {
        //  list.append(30);
         // list.append(70);
         list.insertAtIndex(1, 30);
+        list.insertAtIndex(1, 40);
         
        // list.deleteNode(0);
-        list.deleteNode(2);
+       // list.deleteNode(2);
         list.showLinkedList();
+        
         list.searchNodeWithKey(30);
-       
+        
+        list.orderedLinkedList();
+        list.showLinkedList();
       
     }
 }
