@@ -16,6 +16,14 @@ public class App {
             s.peek();
             s.pop();
         }
+        Queue q = new Queue();
+        q.enqueue(56);
+        q.enqueue(30);
+        q.enqueue(70);
+        logger.info("Queue implementation");
+        while (!q.isEmpty()) {
+            q.dequeue();
+        }
 		 
 	}
 }

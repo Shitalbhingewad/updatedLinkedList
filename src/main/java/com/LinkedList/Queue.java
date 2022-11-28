@@ -17,5 +17,27 @@ public class Queue {
         }
 
     }
+ public boolean isEmpty() {
+        return rear == null && front == null;
+    }
+
+    // delete at the beginning
+    public int dequeue() {
+        if (front == null) {
+            System.out.println("\nQueue Underflow");
+            System.exit(-1);
+        }
+
+        QueueNode temp = front;
+       System.out.println(temp.data);
+        front = front.next;
+
+        if (front == null) {
+            rear = null;
+        }
+        return temp.data;
+    }
+
+}
 
 }
